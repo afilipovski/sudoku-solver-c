@@ -1,7 +1,3 @@
-//
-// Created by Aleksandar on 17-Oct-21.
-//
-
 #ifndef SUDOKU_FUNKCII_H
 #define SUDOKU_FUNKCII_H
 
@@ -9,7 +5,9 @@
 
 #define SUDOKU_H 9
 #define SUDOKU_W 9
-typedef enum Bool bool;
+#define SUBGRID_H 3
+#define SUBGRID_W 3
+#define ENTRY_MAX 9
 
 //STRUKTURI
 
@@ -18,16 +16,13 @@ struct Move {
     int x;
     struct Move* move_prior;
 };
-enum Bool {
-    false, true
-};
 
 //FUNKCII
 
 void print_sudoku(const int puzzle[SUDOKU_H][SUDOKU_W]);
 void push_move(int y, int x);
 void pop_move();
-bool possible_move(const int puzzle[SUDOKU_H][SUDOKU_W],int y, int x, int input);
+int possible_move(const int puzzle[SUDOKU_H][SUDOKU_W],int y, int x, int input);
 
 //PROMENLIVI
 
