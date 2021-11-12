@@ -22,7 +22,7 @@ int possible_move(const int puzzle[SUDOKU_H][SUDOKU_W],int y, int x, int input) 
     const int base_y = y/SUBGRID_H*SUBGRID_H;
     const int base_x = x/SUBGRID_W*SUBGRID_W;
     for (int k=0; k<SUBGRID_H*SUBGRID_W; k++) {
-        if (puzzle[base_y + k/SUBGRID_H][base_x + k/SUBGRID_W] == input)
+        if (puzzle[base_y + k/SUBGRID_H][base_x + k%SUBGRID_W] == input)
             return 0;
     }
     return 1;
